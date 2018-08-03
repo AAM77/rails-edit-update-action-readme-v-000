@@ -1,4 +1,6 @@
-<%= erb(:'partials/form_layout', :locals => {
-  path: posts_path, method_type: 'POST',
-  existing_title: "", existing_description: ""
-}) %>
+<%=
+  render '/partials/form',
+  path: post_path(@post), method_type: 'POST',
+  existing_title: @post.title,
+  existing_description: @post.description
+%>
