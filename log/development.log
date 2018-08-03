@@ -940,3 +940,23 @@ ActionView::Template::Error (Missing partial posts/partials/__form with {:locale
   Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.8ms)
   Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
   Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (25.5ms)
+
+
+Started GET "/posts/4/edit" for 72.82.235.146 at 2018-08-03 13:27:51 +0000
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 4]]
+  Rendered posts/partials/_form.html.erb (0.6ms)
+  Rendered posts/edit.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 20ms (Views: 18.2ms | ActiveRecord: 0.1ms)
+
+
+Started PUT "/posts/4" for 72.82.235.146 at 2018-08-03 13:28:04 +0000
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Kq7n3SmZ0k6DwQe37x3BVCGCkEFLHtEdzOZnfAXPTzrKmZIxDHArlRFTiMtvJD704fesF24KLDwFvZr8gatZlg==", "title"=>"Post Four", "description"=>"This is the Fourth Post!", "commit"=>"Submit Changes", "id"=>"4"}
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "posts" SET "title" = ?, "description" = ?, "updated_at" = ? WHERE "posts"."id" = ?[0m  [["title", "Post Four"], ["description", "This is the Fourth Post!"], ["updated_at", "2018-08-03 13:28:04.796973"], ["id", 4]]
+  [1m[35m (2.4ms)[0m  commit transaction
+Redirected to http://67.205.152.27:43629/posts/4
+Completed 302 Found in 6ms (ActiveRecord: 3.0ms)
