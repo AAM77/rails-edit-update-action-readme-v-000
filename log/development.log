@@ -906,3 +906,37 @@ Processing by PostsController#create as HTML
   [1m[36m (2.5ms)[0m  [1mcommit transaction[0m
 Redirected to http://67.205.152.27:43629/posts/4
 Completed 302 Found in 78ms (ActiveRecord: 2.9ms)
+
+
+Started GET "/posts/4" for 72.82.235.146 at 2018-08-03 13:27:11 +0000
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 4]]
+  Rendered posts/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 13ms (Views: 11.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/posts/4/edit" for 72.82.235.146 at 2018-08-03 13:27:18 +0000
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered posts/edit.html.erb within layouts/application (1.8ms)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.1ms)
+
+ActionView::Template::Error (Missing partial posts/partials/__form with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/home/AAM77/rails-edit-update-action-readme-v-000/app/views"
+):
+    1: <h1>Post Edit Form</h1>
+    2: 
+    3: <%=
+    4:   render 'posts/partials/_form',
+    5:   path: post_path(@post), method_type: 'PUT',
+    6:   existing_title: @post.title,
+    7:   existing_description: @post.description
+  app/views/posts/edit.html.erb:4:in `_app_views_posts_edit_html_erb___1080968559150643272_70296584668240'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (25.5ms)
