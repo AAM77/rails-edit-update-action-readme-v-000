@@ -583,3 +583,10 @@ Processing by PostsController#show as HTML
   [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 1]]
   Rendered posts/show.html.erb within layouts/application (0.1ms)
 Completed 200 OK in 20ms (Views: 13.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/posts/2/edit" for 72.82.235.146 at 2018-08-03 13:03:52 +0000
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mPost Load (0.2ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered posts/edit.html.erb within layouts/application (0.7ms)
