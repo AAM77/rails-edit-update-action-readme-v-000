@@ -6,10 +6,10 @@
 <!-- 3. existing_title : fill in form with this title if it exists-->
 <!-- 4. existing_description : fill in form with this description if it exists-->
 
-<%= erc(:'partials/form_layout', :locals => {
+<%= erb(:'partials/form_layout', :locals => {
   path: post_path(@post), method_type: 'PUT',
   existing_title: @post.title, existing_description: @post.description
-})
+}) %>
 
 
 
