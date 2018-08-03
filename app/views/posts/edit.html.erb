@@ -3,10 +3,10 @@
 <%= form_tag post_path(@post) do %>
 
   <label>Post Title:</label><br>
-  <%= text_field_tag :'post[title]' %><br>
+  <%= text_field_tag :title %><br>
   
   <label>Post Description:</label><br>
-  <%= text_area_tag :'post[description]' %><br>
+  <%= text_area_tag :description %><br>
   
   <%= submit_tag 'Submit Changes' %>
   
