@@ -628,3 +628,20 @@ Processing by PostsController#edit as HTML
   [1m[35mPost Load (0.2ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 1]]
   Rendered posts/edit.html.erb within layouts/application (0.6ms)
 Completed 200 OK in 19ms (Views: 12.4ms | ActiveRecord: 0.7ms)
+
+
+Started PUT "/posts/1" for 72.82.235.146 at 2018-08-03 13:05:48 +0000
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"b2cyzsJlhrkKCE7co3DWUZlsB4MnqQMRhMgbhWhfXoKPUEci54x/YpiawaAjSSnxWRk71QK9/jBNk+YF7DtILg==", "title"=>"Rails Intro: Not Really a Quiz", "description"=>"Not really a quiz!", "commit"=>"Submit Changes", "id"=>"1"}
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "posts" SET "title" = ?, "description" = ?, "updated_at" = ? WHERE "posts"."id" = ?[0m  [["title", "Rails Intro: Not Really a Quiz"], ["description", "Not really a quiz!"], ["updated_at", "2018-08-03 13:05:48.125274"], ["id", 1]]
+  [1m[35m (3.2ms)[0m  commit transaction
+Redirected to http://67.205.152.27:43629/posts/1
+Completed 302 Found in 8ms (ActiveRecord: 3.7ms)
+
+
+Started GET "/posts/1" for 72.82.235.146 at 2018-08-03 13:05:48 +0000
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 1]]
