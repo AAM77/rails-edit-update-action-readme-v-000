@@ -1,6 +1,11 @@
 <h1>Post Edit Form</h1>
 
-<%= render 'partials/form',  %>
+<%=
+  render 'partials/form',
+  path: post_path(@post), method_type: 'PUT',
+  existing_title: @post.title,
+  existing_description: @post.description
+%>
 
 <%= erb(:'partials/form_layout', :locals => {
   path: post_path(@post), method_type: 'PUT',
