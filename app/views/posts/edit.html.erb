@@ -1,7 +1,7 @@
 <h1>Post Edit Form</h1>
 
 <%=
-  render '/partials/_form',
+  render 'posts/partials/_form',
   path: post_path(@post), method_type: 'PUT',
   existing_title: @post.title,
   existing_description: @post.description
