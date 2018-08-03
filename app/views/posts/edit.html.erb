@@ -1,2 +1,10 @@
-<h1>Coupon Edit Form</h1>
+<h1>Post Edit Form</h1>
 
+<%= form_tag post_path(@post) do %>
+  <label>Post Title:</label><br>
+  <%= text_field_tag :'post[title]' %><br>
+  
+  <label>Post Description:</label><br>
+  <%= text_field_tag :'post[description]' %><br>
+  
+<% end %>
